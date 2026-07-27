@@ -1,0 +1,31 @@
+# Local agent/runtime state
+.agents/
+.codex/
+.runtime/
+skills-lock.json
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# LaTeX build intermediates
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+
+# Reproducible per-slide renders; keep contact-sheet.png as the compact preview
+test/previews/slide-*.png
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

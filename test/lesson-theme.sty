@@ -1,0 +1,85 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lesson-theme}[2026/07/27 Calculus teaching-slide theme]
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\definecolor{LessonInk}{HTML}{18243B}
+\definecolor{LessonMuted}{HTML}{5B6880}
+\definecolor{LessonAccent}{HTML}{2F6BFF}
+\definecolor{LessonTeal}{HTML}{139C9A}
+\definecolor{LessonWarm}{HTML}{F2B84B}
+\definecolor{LessonBad}{HTML}{C94B5B}
+\definecolor{LessonAccentSoft}{HTML}{E8EEFF}
+\definecolor{LessonTealSoft}{HTML}{E4F5F3}
+\definecolor{LessonPaper}{HTML}{F7F9FC}
+
+\setbeamercolor{normal text}{fg=LessonInk,bg=LessonPaper}
+\setbeamercolor{frametitle}{fg=LessonInk,bg=LessonPaper}
+\setbeamercolor{structure}{fg=LessonAccent}
+\setbeamercolor{alerted text}{fg=LessonAccent}
+\setbeamercolor{block title}{fg=white,bg=LessonAccent}
+\setbeamercolor{block body}{fg=LessonInk,bg=white}
+\setbeamercolor{example text}{fg=LessonTeal}
+\setbeamercolor{author in head/foot}{fg=LessonMuted,bg=LessonPaper}
+\setbeamercolor{page number in head/foot}{fg=LessonMuted,bg=LessonPaper}
+\setbeamerfont{title}{size=\fontsize{30}{34},series=\bfseries}
+\setbeamerfont{subtitle}{size=\fontsize{15}{19}}
+\setbeamerfont{frametitle}{size=\fontsize{19.5}{23.5},series=\bfseries}
+\setbeamerfont{block title}{size=\fontsize{12.5}{15},series=\bfseries}
+\setbeamerfont{block body}{size=\fontsize{11.5}{15}}
+\setbeamerfont{page number in head/foot}{size=\fontsize{8.5}{10}}
+\usefonttheme{professionalfonts}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\raise0.2ex\hbox{\color{LessonAccent}\scriptsize$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\raise0.1ex\hbox{\color{LessonTeal}\tiny$\bullet$}}
+\setbeamertemplate{enumerate item}{\color{LessonAccent}\insertenumlabel.}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamersize{text margin left=9mm,text margin right=9mm}
+
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+    \begin{beamercolorbox}[wd=.84\paperwidth,ht=4.5mm,dp=2mm,leftskip=9mm]{author in head/foot}%
+      \color{LessonMuted}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.16\paperwidth,ht=4.5mm,dp=2mm,rightskip=9mm]{page number in head/foot}%
+      \hfill\color{LessonMuted}\insertframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\setbeamertemplate{frametitle}{%
+  \vspace{3.5mm}\hspace{1mm}\insertframetitle\par
+  \vspace{1mm}\hspace{1mm}\color{LessonAccent}\rule{12mm}{1.3pt}%
+}
+
+\newcommand{\LessonBackground}[1]{%
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{#1}}%
+}
+\newcommand{\LessonClearBackground}{\usebackgroundtemplate{}}
+
+\newcommand{\LessonDecorA}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[LessonAccent!10] ([xshift=-5mm,yshift=5mm]current page.south east) circle (11mm);
+    \fill[LessonTeal!15] ([xshift=-2mm,yshift=2mm]current page.south east) circle (4mm);
+  \end{tikzpicture}%
+}
+\newcommand{\LessonDecorB}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[LessonTeal!10] ([xshift=3mm,yshift=-3mm]current page.north west) circle (10mm);
+    \draw[LessonAccent!18,line width=2pt] ([xshift=-18mm,yshift=5mm]current page.south east) -- ([xshift=-4mm,yshift=5mm]current page.south east);
+  \end{tikzpicture}%
+}
+\newcommand{\LessonTakeaway}[1]{%
+  \begin{beamercolorbox}[rounded=true,sep=2.6mm,wd=\linewidth]{block body}
+    \color{LessonInk}\textbf{关键一句：}\,#1
+  \end{beamercolorbox}%
+}
+\newcommand{\LessonQuestion}[1]{%
+  \begin{tikzpicture}
+    \node[rounded corners=2mm,fill=LessonAccentSoft,text=LessonInk,inner sep=3mm,text width=.85\linewidth,align=left] {\textbf{想一想：}\,#1};
+  \end{tikzpicture}%
+}

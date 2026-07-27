@@ -1,0 +1,68 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage[UTF8,fontset=fandol]{ctex}
+\usepackage{amsmath,amssymb,mathtools,booktabs}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{lesson-theme}
+
+\title{课程主题}
+\subtitle{知识点}
+\author{教师姓名}
+\date{}
+
+\begin{document}
+
+% Choose one background system for the whole deck.
+% Default below: TikZ background. Do not add generated background images.
+% Image mode: generate cover-bg.png, content-bg.png, optional section-bg.png,
+% and closing-bg.png separately from one visual brief. Delete the three \fill
+% lines below and apply the correct image immediately before each frame, e.g.:
+% \LessonBackground{assets/cover-bg.png}
+% Never place a background with an overlay node after slide content.
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[LessonAccentSoft] (current page.south west) rectangle (current page.north east);
+    \fill[LessonAccent!16] ([xshift=-42mm]current page.north east) circle (34mm);
+    \fill[LessonAccent!28] ([xshift=-18mm,yshift=10mm]current page.south east) circle (22mm);
+    \node[anchor=west,text width=.66\paperwidth] at ([xshift=13mm]current page.west) {
+      {\usebeamerfont{title}\color{LessonInk}\inserttitle\par}
+      \vspace{3mm}
+      {\large\color{LessonAccent}\insertsubtitle\par}
+      \vspace{8mm}
+      {\color{LessonMuted}\insertauthor}
+    };
+  \end{tikzpicture}
+\end{frame}
+\LessonClearBackground
+
+\begin{frame}{学习目标}
+  \begin{itemize}
+    \item 用一句话说明本节课要理解什么
+    \item 用一句话说明本节课要能够完成什么
+    \item 标明必要的前置知识
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{核心概念}
+  \begin{columns}[T,onlytextwidth]
+    \column{.54\textwidth}
+      放置简洁定义、原文片段或核心结论。
+    \column{.42\textwidth}
+      放置精确图示、例子或对照内容。
+  \end{columns}
+  \[
+    \LessonElement{s03-core-formula}{E=mc^2}
+  \]
+  \vfill
+  \LessonTakeaway{写出这一页唯一需要学生记住的内容。}
+\end{frame}
+
+\begin{frame}{本节总结}
+  \begin{enumerate}
+    \item 核心概念
+    \item 关键关系
+    \item 应用或迁移
+  \end{enumerate}
+\end{frame}
+
+\end{document}

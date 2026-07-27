@@ -1,0 +1,4 @@
+interface:
+  display_name: "多学科教学课件"
+  short_description: "生成多学科 LaTeX 教学课件、同步讲稿与逐页预览"
+  default_prompt: "Use $build-lesson-slides to create a concise 16:9 teaching deck and synchronized speaker notes for the specified subject and topic."

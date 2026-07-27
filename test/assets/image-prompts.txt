@@ -1,0 +1,10 @@
+Built-in image generation prompts used for the Lagrange mean value theorem deck.
+
+cover-bg.png
+16:9 minimal editorial mathematical abstraction; warm off-white paper texture; smooth curve with secant and parallel tangent directions on the right third; left 60 percent low-detail; navy, cobalt, teal, amber; no text, formulas, axes, logos, or watermark.
+
+middle-bg.png
+16:9 proof-transition background; layered parallel ribbons converging toward a point at upper right with a small lower-left counterweight; central 68 percent low-detail; same palette and texture; no text, formulas, axes, logos, or watermark.
+
+closing-bg.png
+16:9 summary background; three fine paths merge into one resolved curve along the lower-right edge, with a faint upper-left arc; middle and upper-left 65 percent low-detail; same palette and texture; no text, formulas, axes, logos, or watermark.

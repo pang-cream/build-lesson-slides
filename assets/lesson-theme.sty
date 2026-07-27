@@ -1,0 +1,62 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lesson-theme}[2026/07/27 Minimal teaching-slide theme]
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\usetikzlibrary{calc}
+
+\definecolor{LessonInk}{HTML}{172033}
+\definecolor{LessonMuted}{HTML}{5D687B}
+\definecolor{LessonAccent}{HTML}{3567D6}
+\definecolor{LessonAccentSoft}{HTML}{E9EFFD}
+\definecolor{LessonPaper}{HTML}{F7F8FB}
+
+\setbeamercolor{normal text}{fg=LessonInk,bg=LessonPaper}
+\setbeamercolor{frametitle}{fg=LessonInk,bg=LessonPaper}
+\setbeamercolor{structure}{fg=LessonAccent}
+\setbeamercolor{alerted text}{fg=LessonAccent}
+\setbeamercolor{author in head/foot}{fg=LessonMuted,bg=LessonPaper}
+\setbeamercolor{page number in head/foot}{fg=LessonMuted,bg=LessonPaper}
+\setbeamerfont{author in head/foot}{size=\fontsize{8.5}{10}}
+\setbeamerfont{page number in head/foot}{size=\fontsize{8.5}{10}}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+    \begin{beamercolorbox}[wd=.84\paperwidth,ht=4.5mm,dp=2mm,leftskip=9mm]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\color{LessonMuted}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.16\paperwidth,ht=4.5mm,dp=2mm,rightskip=9mm]{page number in head/foot}%
+      \hfill\usebeamerfont{page number in head/foot}\color{LessonMuted}\insertframenumber
+    \end{beamercolorbox}%
+  }%
+}
+\setbeamertemplate{frametitle}{%
+  \vspace{4mm}\hspace{2mm}\insertframetitle\par
+  \vspace{1mm}\hspace{2mm}\color{LessonAccent}\rule{11mm}{1.4pt}
+}
+\setbeamersize{text margin left=9mm,text margin right=9mm}
+
+\newcommand{\LessonBackground}[1]{%
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{#1}}%
+}
+\newcommand{\LessonClearBackground}{\usebackgroundtemplate{}}
+\newcommand{\LessonElement}[2]{\href{lesson://element/#1}{#2}}
+\newcommand{\LessonPanel}[2][0.55\paperwidth]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      anchor=west,
+      rounded corners=2mm,
+      fill=white,
+      fill opacity=0.94,
+      text opacity=1,
+      inner sep=7mm,
+      text width=#1
+    ] at ([xshift=6mm]current page.west) {#2};
+  \end{tikzpicture}%
+}
+\newcommand{\LessonTakeaway}[1]{%
+  \begin{beamercolorbox}[rounded=true,sep=2.5mm,wd=\linewidth]{block body}
+    \color{LessonInk}\textbf{要点：}#1
+  \end{beamercolorbox}%
+}
